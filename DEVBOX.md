@@ -50,20 +50,27 @@ Devbox provides convenient scripts for common Terraform operations:
 # Set up the environment and format code
 devbox run setup
 
-# Plan Terraform changes
-devbox run plan
+# Root module operations (from infra/awesome/)
+devbox run plan     # Plan root module changes
+devbox run apply    # Apply root module changes
+devbox run destroy  # Destroy root module infrastructure
 
-# Apply Terraform changes
-devbox run apply
+# Environment-specific operations
+devbox run dev-plan     # Plan dev environment
+devbox run dev-apply    # Apply dev environment
+devbox run dev-destroy  # Destroy dev environment
 
-# Destroy infrastructure
-devbox run destroy
+devbox run staging-plan     # Plan staging environment
+devbox run staging-apply    # Apply staging environment
+devbox run staging-destroy  # Destroy staging environment
 
-# Format Terraform code
-devbox run fmt
+devbox run prod-plan     # Plan production environment
+devbox run prod-apply    # Apply production environment
+devbox run prod-destroy  # Destroy production environment
 
-# Validate Terraform configuration
-devbox run validate
+# Code quality
+devbox run fmt      # Format Terraform code
+devbox run validate # Validate Terraform configuration
 ```
 
 ## Benefits of Using Devbox
@@ -82,5 +89,8 @@ If you prefer not to enter the shell, you can run commands directly:
 devbox run terraform --version
 
 # Execute multiple commands
-devbox run "terraform init && terraform plan"
+devbox run "cd infra/awesome && terraform init && terraform plan"
+
+# Work with specific environments
+devbox run "cd infra/awesome/environments/dev && terraform plan"
 ```

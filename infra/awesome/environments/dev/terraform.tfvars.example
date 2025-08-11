@@ -1,0 +1,3 @@
+backend_bucket = "awesome-terraform-state"
+aws_region = "eu-north-1"
+backend_key = "dev/terraform.tfstate"
