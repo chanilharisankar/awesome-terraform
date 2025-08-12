@@ -20,62 +20,7 @@
       "echo '  2. Run: direnv allow'",
       "echo '  3. Start building with Terraform!'",
       "echo ''"
-    ],
-    "scripts": {
-      "setup": [
-        "echo 'Setting up Terraform development environment...'",
-        "if [ ! -f .envrc ]; then echo 'Warning: .envrc file not found. Please configure your AWS credentials.'; fi",
-        "terraform fmt -recursive ./infra/awesome/",
-        "echo 'Environment setup complete!'"
-      ],
-      "plan": [
-        "cd infra/awesome",
-        "terraform init",
-        "terraform plan"
-      ],
-      "apply": [
-        "cd infra/awesome",
-        "terraform init",
-        "terraform apply"
-      ],
-      "destroy": [
-        "cd infra/awesome",
-        "terraform destroy"
-      ],
-      "fmt": [
-        "terraform fmt -recursive ./infra/awesome/"
-      ],
-      "validate": [
-        "cd infra/awesome && terraform validate"
-      ],
-      "dev-plan": [
-        "cd infra/awesome/environments/dev && terraform init && terraform plan"
-      ],
-      "dev-apply": [
-        "cd infra/awesome/environments/dev && terraform init && terraform apply"
-      ],
-      "dev-destroy": [
-        "cd infra/awesome/environments/dev && terraform destroy"
-      ],
-      "staging-plan": [
-        "cd infra/awesome/environments/staging && terraform init && terraform plan"
-      ],
-      "staging-apply": [
-        "cd infra/awesome/environments/staging && terraform init && terraform apply"
-      ],
-      "staging-destroy": [
-        "cd infra/awesome/environments/staging && terraform destroy"
-      ],
-      "prod-plan": [
-        "cd infra/awesome/environments/prod && terraform init && terraform plan"
-      ],
-      "prod-apply": [
-        "cd infra/awesome/environments/prod && terraform init && terraform apply"
-      ],
-      "prod-destroy": [
-        "cd infra/awesome/environments/prod && terraform destroy"
-      ]
-    }
+    ]
   },
   "env": {
     "DEVBOX_TERRAFORM_ENV": "development"

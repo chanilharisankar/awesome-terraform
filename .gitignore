@@ -8,6 +8,10 @@ infra/**/.terraform/
 infra/**/*.tfstate
 infra/**/*.tfstate.*
 
+# Variable definition files
+*.tfvars
+infra/**/*.tfvars
+
 # Crash log files
 crash.log
 crash.*.log
