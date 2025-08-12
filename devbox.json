@@ -11,9 +11,9 @@
     "init_hook": [
       "echo 'Welcome to the Terraform development environment!'",
       "echo 'Available tools:'",
-      "echo '  - Terraform: $(terraform version | head -n1)'",
-      "echo '  - AWS CLI: $(aws --version)'",
-      "echo '  - direnv: $(direnv version)'",
+      "terraform version | head -n1 | sed 's/^/  - /'",
+      "aws --version 2>&1 | sed 's/^/  - AWS CLI: /'",
+      "echo \"  - direnv: $(direnv version)\"",
       "echo ''",
       "echo 'To get started:'",
       "echo '  1. Configure your AWS credentials in .envrc'",
