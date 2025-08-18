@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.12"
   
   backend "s3" {
-    key    = "dev/network/terraform.tfstate"
+    key    = "dev/ec2/terraform.tfstate"
   }
 
   required_providers {
@@ -23,5 +23,15 @@ provider "aws" {
       ManagedBy   = "Terraform"
       Owner       = var.owner
     }
+  }
+}
+
+# Data source to access network layer outputs
+data "terraform_remote_state" "network" {
+  backend = "s3"
+  config = {
+    bucket = var.terraform_state_bucket
+    key    = "dev/network/terraform.tfstate"
+    region = var.aws_region
   }
 }

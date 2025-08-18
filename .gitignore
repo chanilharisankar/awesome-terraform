@@ -39,6 +39,18 @@ terraform.rc
 # Environment variables (contains sensitive AWS credentials)
 .envrc
 
+# SSH Keys (keep public keys, ignore private keys)
+*.pem
+id_rsa
+id_ed25519
+privatekey
+# Allow public keys
+!*.pub
+
+# Variable definition files
+*.tfvars
+infra/**/*.tfvars
+
 # Devbox cache and build artifacts
 .devbox/
 devbox.lock
