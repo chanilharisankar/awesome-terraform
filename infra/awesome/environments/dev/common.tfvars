@@ -1,2 +1,2 @@
 # Environment-level common variables
-environment  = "dev"
+environment = "dev"

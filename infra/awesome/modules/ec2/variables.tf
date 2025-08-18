@@ -22,13 +22,13 @@ variable "vpc_id" {
 variable "ami" {
   description = "The AMI ID to use for the EC2 instance"
   type        = string
-  default = "ami-0de716d6197524dd9"
+  default     = "ami-0de716d6197524dd9"
 }
 
 variable "instance_type" {
   description = "The instance type to use for the EC2 instance"
   type        = string
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
 variable "public_subnet_ids" {

@@ -21,5 +21,5 @@ variable "vpc_cidr" {
 variable "owner" {
   description = "Owner of the resources"
   type        = string
-  default     = "DevOps Team"  # Keep default for optional field
+  default     = "DevOps Team" # Keep default for optional field
 }

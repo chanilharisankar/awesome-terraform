@@ -1,8 +1,8 @@
 terraform {
   required_version = ">= 1.12"
-  
+
   backend "s3" {
-    key    = "dev/network/terraform.tfstate"
+    key = "dev/network/terraform.tfstate"
   }
 
   required_providers {
